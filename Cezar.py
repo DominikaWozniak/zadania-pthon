@@ -1,27 +1,40 @@
 
 def cezar():
-    literki_lista = ['P', 'Y', 'T', 'H', 'O', 'N']
+    alfabet = ['A']
     zakodowane = []
-    odkodowane = []
+    literySlowa = []
+    key = 2
+    pomocnicza = 0
+    for i in range(0, 25):
+        pomocnicza = ord(alfabet[i]) + 1
+        alfabet.append(chr(pomocnicza))
 
-    for i in range(0,len(literki_lista)):
-        x = ord(literki_lista[i])
-        if x + 2 > 90 or x < 65:
-            x = ord(literki_lista[i])
-            zakodowane.append(chr(x - 24))
+    for i in range(0, 25):
+        pomocnicza = ord(alfabet[i]) + key
+        zakodowane.append(chr(pomocnicza))
+
+    if ord(zakodowane[24]) > 90:
+        zakodowane.remove('[')
+        zakodowane.append(chr(65))
+        zakodowane.append(chr(66))
+
+
+
+    while(True):
+        slowoDoKod = input('Podaj slowo do zakodowania, '
+                           'wpisuj pojedyncze wielkie litery'
+                           'żeby zakonczyc wpisywanie wpisz END: ')
+        if slowoDoKod == 'END':
+            break
         else:
-            zakodowane.append(chr(x + 2))
+            literySlowa.append(slowoDoKod)
 
-    for i in range(0, len(zakodowane)):
-        y = ord(zakodowane[i])
-        for i in range(0, len(zakodowane)):
-            odkodowane.append(chr(y - 2))
+    print(literySlowa)
 
 
-    print(zakodowane)
-    print(odkodowane)
+
+
+
 
 
 cezar()
-
-
