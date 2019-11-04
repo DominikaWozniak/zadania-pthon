@@ -8,3 +8,4 @@ def cezar(napis: str, klucz: int):
 
 print(cezar('PYTHON', 2))
 print(cezar('RAVJQP', -2))
+
